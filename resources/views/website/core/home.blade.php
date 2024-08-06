@@ -146,17 +146,17 @@
             <p class="mb-0 text_base text_gray">جميع الحقوق محفوظه لدى <span class="text_main">اتقان</span> </p>
             <ul class=" px-0 d-flex gap-3 footer_list mb-0">
                 <li>
-                    <a href="{{ $data['facebook'] }}">
+                    <a target="_blank" href="{{ $data['facebook'] }}">
                         <i class="facebook fab fa-facebook-f"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ $data['linkedin'] }}">
+                    <a target="_blank" href="{{ $data['linkedin'] }}">
                         <i class="linkedin fab fa-linkedin-in"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ $data['email'] }}">
+                    <a target="_blank" href="{{ $data['email'] }}">
                         <i class="google far fa-envelope"></i>
                     </a>
                 </li>
