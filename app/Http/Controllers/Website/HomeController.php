@@ -16,6 +16,7 @@ use App\Models\ContactUs;
 use App\Models\Program;
 use App\Models\User;
 use App\Repository\StructureRepositoryInterface;
+use App\Repository\InfoRepositoryInterface;
 use Illuminate\Support\Str;
 use App\Http\Requests\Api\V1\User\UserRequest;
 
@@ -25,6 +26,7 @@ class HomeController extends Controller
 
     public function __construct(
         private readonly StructureRepositoryInterface $structureRepository,
+        private readonly InfoRepositoryInterface $infoRepository,
         private readonly FileManagerService          $fileManagerService
     )
     {
@@ -40,7 +42,15 @@ class HomeController extends Controller
         $advertisements = Advertisements::all();
         $programs = Program::all();
         $doctors = Doctor::latest()->take(3)->get();
-        return view('website.site.index',compact('home','advertisements','doctors','programs'));
+
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+
+        return view('website.site.index',compact('home','advertisements','doctors','programs','data'));
     }
 
     public function doctors()
@@ -50,7 +60,14 @@ class HomeController extends Controller
         $data = json_decode($structures['content'], true);
         $home = $data[$local];
         $doctors = Doctor::get();
-        return view('website.site.doctors',compact('home','doctors'));
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+
+        return view('website.site.doctors',compact('home','doctors','data'));
     }
 
     public function contact()
@@ -59,7 +76,15 @@ class HomeController extends Controller
         $structures = $this->structureRepository->structure('home');
         $data = json_decode($structures['content'], true);
         $home = $data[$local];
-        return view('website.site.contact',compact('home'));
+
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+
+        return view('website.site.contact',compact('home','data'));
     }
 
     public function storecontact(Request $request)
@@ -81,7 +106,14 @@ class HomeController extends Controller
 
     public function getregister()
     {
-        return view('website.site.register');
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+
+        return view('website.site.register',compact('data'));
     }
 
     public function register(UserRequest $request)
@@ -108,7 +140,14 @@ class HomeController extends Controller
 
     public function getlogin()
     {
-        return view('website.site.login');
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+
+        return view('website.site.login',compact('data'));
     }
 
     public function login(LoginRequest $request)
@@ -135,10 +174,30 @@ class HomeController extends Controller
         return redirect()->route('index');
     }
 
-    public function ads_details($id)
+    public function program_details($id)
     {
         $program = Program::find($id);
-        return view('website.site.ads_details',compact('program'));
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+
+        return view('website.site.program_details',compact('program','data'));
+    }
+
+    public function ads_details($id)
+    {
+        $advertisement = Advertisements::find($id);
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+
+        return view('website.site.ads_details',compact('advertisement','data'));
     }
 
 

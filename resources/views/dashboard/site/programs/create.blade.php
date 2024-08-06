@@ -73,7 +73,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="exampleInputName1">@lang('dashboard.url_video')</label>
-                                            <input type="text" name="url_video"   class="form-control summernote" id="exampleInputMainTitle2" placeholder=""/>
+                                            <input type="text" name="url_video"   class="form-control" id="exampleInputMainTitle2" placeholder=""/>
                                         </div>
                                     </div>
                                     @error('description')

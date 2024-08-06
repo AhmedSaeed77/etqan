@@ -27,6 +27,7 @@
   <title>@yield('title') - {{config('app.APP_NAME')}}</title>
 
   <style>
+
     .nav-item {
     /* Add your styles for the list item */
 }
@@ -83,6 +84,7 @@
 <body dir="rtl">
   <!---------->
   <div class="content">
+
     <!-- Start Navbar -->
     <nav class="navbar py-2  navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid gap-3 ">
@@ -144,17 +146,17 @@
             <p class="mb-0 text_base text_gray">جميع الحقوق محفوظه لدى <span class="text_main">اتقان</span> </p>
             <ul class=" px-0 d-flex gap-3 footer_list mb-0">
                 <li>
-                    <a href="">
+                    <a href="{{ $data['facebook'] }}">
                         <i class="facebook fab fa-facebook-f"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ $data['linkedin'] }}">
                         <i class="linkedin fab fa-linkedin-in"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ $data['email'] }}">
                         <i class="google far fa-envelope"></i>
                     </a>
                 </li>
@@ -180,6 +182,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="{{ asset('js/main.js')}}"></script>
 @yield('page-script')
 

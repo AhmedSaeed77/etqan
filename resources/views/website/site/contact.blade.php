@@ -38,15 +38,15 @@
           <div class="contact_info   order-0 order-md-1 d-grid gap-4 align-top" dir="ltr">
             <div class="d-flex align-items-center gap-2 ">
               <i class="fas fa-envelope"></i>
-              <span class="fw">example@gmail.com</span>
+              <span class="fw">{{ $data['email'] }}</span>
             </div>
             <div class="d-flex align-items-center gap-2 ">
               <i class="fas fa-map-marker-alt"></i>
-              <span class="fw"> المملكة العربية السعودية - الرياض - شارع </span>
+              <span class="fw"> {{ $data['location'] }} </span>
             </div>
             <div class="d-flex align-items-center gap-2 ">
               <i class="fas fa-phone-alt"></i>
-              <span class="fw">+999121212123</span>
+              <span class="fw">{{ $data['phone'] }}</span>
 
             </div>
           </div>

@@ -68,7 +68,7 @@ class Handler extends ExceptionHandler
             if ($request->expectsJson()) {
                 return $this->responseFail(status: Http::UNAUTHORIZED, message: 'Unauthenticated');
             } else {
-                return redirect()->route('auth.login');
+                return redirect()->route('index');
             }
         }
 

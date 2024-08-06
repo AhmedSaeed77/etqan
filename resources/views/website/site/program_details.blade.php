@@ -2,7 +2,7 @@
 
 @section('title', 'البرامج')
  @section('content')
-<!
+
         <div class="container">
             <div class="program_details gap-5 py-5 d-grid gap-5">
 
@@ -44,20 +44,23 @@
                                 <p>
                                     {!! $program->description !!}
                                 </p>
-
-
                             </div>
                         </div>
                         {{-- <button class="btn main_btn join_us_btn  w-fit ">انضم الان </button> --}}
-
-
                     </div>
                     <div class="program_image order-0 order-md-1">
                         <img src="{{ url($program->image) }}" class="img-fluid " alt="program img">
-
                     </div>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center" style="width: 100%; height: 100vh;">
+                    <iframe class="w-100" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/{{ $program->url_video }}"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
    @endsection
+
+

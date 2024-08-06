@@ -4,7 +4,16 @@
 
 
  @section('content')
+<style>
 
+.div-up{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+</style>
     <!-- start hero section -->
     <div class="hero" style="background: url('{{ url($home['home_content']['image']) }}') no-repeat center center; background-size: cover; height: 100vh;">
         <div class="container d-flex justify-content-center ">
@@ -43,9 +52,9 @@
         <span class="title_border"></span>
         <h2 class="text-primary fw-bold fs-1">الاعلانات</h2>
       </div>
-      <div class="grid_3 py-5">
+      <div class="div-up py-5">
         @foreach ($advertisements as $advertisement)
-        <a class="  main_shadow d-flex gap-3 px-0 py-0 ads_container">
+        <a href="{{ route('ads_details',$advertisement->id) }}" class = "main_shadow d-flex gap-3 px-0 py-0 ads_container">
             <img src="{{ url($advertisement->image) }}" class="ads_image img-fluid" alt="">
             <div class="ps-2 ps-sm-3 py-2  ads_content ">
               <h3> {{ $advertisement->name }}</h3>
@@ -76,21 +85,17 @@
           <span class="title_border"></span>
           <h2 class="text-primary fw-bold fs-1">الاطباء</h2>
         </div>
-        <div class="doctors  gap-5 py-5  justify-content-center gap-5">
+        <div class="doctors d-flex flex-wrap gap-5 py-5 justify-content-center">
             @foreach ($doctors as $doctor)
-            <div class="doctor_card text-center w-[100px] d-grid gap-3">
-                <img src="{{ url($doctor->image) }}" alt="">
-                <div class="content p-3">
-                  <h2 class="fw-bold fs-4">{{ $doctor->name }}</h2>
-                  <hr class="doctor_title_border">
-                  <p>{!! $doctor->description !!}</p>
-
+                <div class="doctor_card text-center w-[100px] d-grid gap-3">
+                    <img src="{{ url($doctor->image) }}" alt="">
+                    <div class="content p-3">
+                        <h2 class="fw-bold fs-4">{{ $doctor->name }}</h2>
+                        <hr class="doctor_title_border">
+                        <p>{!! $doctor->description !!}</p>
+                    </div>
                 </div>
-
-              </div>
             @endforeach
-
-
         </div>
         <a href="{{ route('doctors') }}" class="mx-auto">
 
@@ -108,9 +113,9 @@
           <h2 class="text-primary fw-bold fs-1">البرامج</h2>
         </div>
         <div class="doctors  gap-5 py-5 text-end justify-content-start gap-5">
-          @foreach ($programs as $prohram)
+          @foreach ($programs as $program)
             <a href="{{ route('program_details',$program->id) }}" class="doctor_card  w-[100px] d-grid gap-3">
-              <img src="{{ url($prohram->image) }}" alt="">
+              <img src="{{ url($program->image) }}" alt="">
               <div class="content text-end p-3 d-grid gap-2">
                 <h2 class="fw-bold fs-4"> {{ $program->name }} </h2>
                 <p>{!! $program->description !!}</p>
