@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\Advertisements\AdvertisementsController;
 use App\Http\Controllers\Dashboard\Doctor\DoctorController;
 use App\Http\Controllers\Dashboard\ContactUsController;
 use App\Http\Controllers\Dashboard\Info\InfoController;
+use App\Http\Controllers\Dashboard\Program\ProgramController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,7 @@ Route::group([
         });
 
         Route::resource('advertisements', AdvertisementsController::class);
+        Route::resource('programs', ProgramController::class);
         Route::resource('homedoctors', DoctorController::class);
         Route::resource('contactus', ContactUsController::class);
         Route::post('contactusreply/{id}', [ContactUsController::class,'reply'])->name('contactus.reply');

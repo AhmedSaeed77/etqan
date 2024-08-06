@@ -108,132 +108,15 @@
           <h2 class="text-primary fw-bold fs-1">البرامج</h2>
         </div>
         <div class="doctors  gap-5 py-5 text-end justify-content-start gap-5">
-          <a href="{{ route('program_details',1) }}" class="doctor_card  w-[100px] d-grid gap-3">
-            <img src="{{ asset('images/program.jpeg') }}" alt="">
-            <div class="content text-end p-3 d-grid gap-2">
-              <h2 class="fw-bold fs-4">البرنامج الاول </h2>
-              <p>
-                لوريم ابسيم لوريم ابسيم لوريمم لوريم
-                ابسيم
-              </p>
-              <div class="info d-flex align-items-center justify-content-between flex-wrap gap-2">
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-clock text-primary"></i>
-                  30 يوم
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-users text-primary"></i>
-                  30 طبيب
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-info-circle text-primary"></i>
-                  5 خطوات
-                </div>
+          @foreach ($programs as $prohram)
+            <a href="{{ route('program_details',$program->id) }}" class="doctor_card  w-[100px] d-grid gap-3">
+              <img src="{{ url($prohram->image) }}" alt="">
+              <div class="content text-end p-3 d-grid gap-2">
+                <h2 class="fw-bold fs-4"> {{ $program->name }} </h2>
+                <p>{!! $program->description !!}</p>
               </div>
-            </div>
-
-          </a>
-          <div class="doctor_card  w-[100px] d-grid gap-3">
-            <img src="{{ asset('images/program.jpeg') }}" alt="">
-            <div class="content text-end p-3 d-grid gap-2">
-              <h2 class="fw-bold fs-4">البرنامج الاول </h2>
-              <p>
-                لوريم ابسيم لوريم ابسيم لوريمم لوريم
-                ابسيم
-              </p>
-              <div class="info d-flex align-items-center justify-content-between flex-wrap gap-2">
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-clock text-primary"></i>
-                  30 يوم
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-users text-primary"></i>
-                  30 طبيب
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-info-circle text-primary"></i>
-                  5 خطوات
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="doctor_card  w-[100px] d-grid gap-3">
-            <img src="{{ asset('images/program.jpeg') }}" alt="">
-            <div class="content text-end p-3 d-grid gap-2">
-              <h2 class="fw-bold fs-4">البرنامج الاول </h2>
-              <p>
-                لوريم ابسيم لوريم ابسيم لوريمم لوريم
-                ابسيم
-              </p>
-              <div class="info d-flex align-items-center justify-content-between flex-wrap gap-2">
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-clock text-primary"></i>
-                  30 يوم
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-users text-primary"></i>
-                  30 طبيب
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-info-circle text-primary"></i>
-                  5 خطوات
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="doctor_card text-center w-[100px] d-grid gap-3">
-            <img src="{{ asset('images/program.jpeg') }}" alt="">
-            <div class="content text-end p-3 d-grid gap-2">
-              <h2 class="fw-bold fs-4">البرنامج الاول </h2>
-              <p>
-                لوريم ابسيم لوريم ابسيم لورابسيم لوريم
-                ابسيم
-              </p>
-              <div class="info d-flex align-items-center justify-content-between flex-wrap gap-2">
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-clock text-primary"></i>
-                  30 يوم
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-users text-primary"></i>
-                  30 طبيب
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-info-circle text-primary"></i>
-                  5 خطوات
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="doctor_card text-center w-[100px] d-grid gap-3">
-            <img src="{{ asset('images/program.jpeg') }}" alt="">
-            <div class="content text-end p-3 d-grid gap-2">
-              <h2 class="fw-bold fs-4">البرنامج الاول </h2>
-              <p>
-                لوريم ابسيم لوريم ابسيم لوريم ابسيم لوريم م لوريم
-                ابسيم
-              </p>
-              <div class="info d-flex align-items-center justify-content-between flex-wrap gap-2">
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-clock text-primary"></i>
-                  30 يوم
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-users text-primary"></i>
-                  30 طبيب
-                </div>
-                <div class="icon d-flex gap-1 align-items-end">
-                  <i class="fas fa-info-circle text-primary"></i>
-                  5 خطوات
-                </div>
-              </div>
-            </div>
-
-          </div>
+            </a>
+          @endforeach
         </div>
       </div>
     </div>

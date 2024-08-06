@@ -56,6 +56,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item  {{ in_array(request()->route()->getName(),['programs.index', 'programs.create', 'programs.edit', 'programs.show'])? 'menu-open': '' }}">
+                    <a href="{{ route('programs.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            @lang('dashboard.programs')
+                        </p>
+                    </a>
+                </li>
+
                 <li class="nav-item  {{ in_array(request()->route()->getName(),['contactus.index', 'contactus.create', 'contactus.edit', 'contactus.show'])? 'menu-open': '' }}">
                     <a href="{{ route('contactus.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-circle"></i>

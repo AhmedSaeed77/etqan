@@ -13,6 +13,7 @@ use App\Http\Services\Mutual\FileManagerService;
 use App\Models\Advertisements;
 use App\Models\Doctor;
 use App\Models\ContactUs;
+use App\Models\Program;
 use App\Models\User;
 use App\Repository\StructureRepositoryInterface;
 use Illuminate\Support\Str;
@@ -37,8 +38,9 @@ class HomeController extends Controller
         $home = $data[$local];
 
         $advertisements = Advertisements::all();
+        $programs = Program::all();
         $doctors = Doctor::latest()->take(3)->get();
-        return view('website.site.index',compact('home','advertisements','doctors'));
+        return view('website.site.index',compact('home','advertisements','doctors','programs'));
     }
 
     public function doctors()
@@ -133,12 +135,11 @@ class HomeController extends Controller
         return redirect()->route('index');
     }
 
-  public function ads_details($id){
-    return view('website.site.ads_details');
-  }
+    public function ads_details($id)
+    {
+        $program = Program::find($id);
+        return view('website.site.ads_details',compact('program'));
+    }
 
-  public function program_details($id){
-    return view('website.site.program_details');
-  }
 
 }
