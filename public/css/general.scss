@@ -1,0 +1,18 @@
+@import "sass/helpers/variables";
+
+// base
+@import "sass/layouts/base";
+@import "sass/layouts/classes";
+
+// component
+
+@import "./sass/components/navbar";
+@import "sass/components/hero";
+@import "sass/components/about";
+@import "sass/components/ads";
+
+@import "sass/components/footer";
+// pages
+@import "sass/pages/contact";
+@import "sass/pages/doctors";
+@import "sass/pages/program_details";
