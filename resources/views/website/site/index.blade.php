@@ -50,7 +50,7 @@
     <div class="container py-5 ads">
       <div class="title  pt-5 d-flex align-items-center gap-3">
         <span class="title_border"></span>
-        <h2 class="text-primary fw-bold fs-1">الاعلانات</h2>
+        <h2 class="text-primary fw-bold fs-1">{{ $data['ads'] }}</h2>
       </div>
       <div class="div-up py-5">
         @foreach ($advertisements as $advertisement)

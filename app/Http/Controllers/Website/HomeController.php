@@ -49,6 +49,7 @@ class HomeController extends Controller
         $data['email'] = $this->infoRepository->getValue(['email']);
         $data['phone'] = $this->infoRepository->getValue(['phone']);
         $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
 
         return view('website.site.index',compact('home','advertisements','doctors','programs','data'));
     }
@@ -66,6 +67,7 @@ class HomeController extends Controller
         $data['email'] = $this->infoRepository->getValue(['email']);
         $data['phone'] = $this->infoRepository->getValue(['phone']);
         $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
 
         return view('website.site.doctors',compact('home','doctors','data'));
     }
@@ -83,6 +85,7 @@ class HomeController extends Controller
         $data['email'] = $this->infoRepository->getValue(['email']);
         $data['phone'] = $this->infoRepository->getValue(['phone']);
         $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
 
         return view('website.site.contact',compact('home','data'));
     }
@@ -112,6 +115,7 @@ class HomeController extends Controller
         $data['email'] = $this->infoRepository->getValue(['email']);
         $data['phone'] = $this->infoRepository->getValue(['phone']);
         $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
 
         return view('website.site.register',compact('data'));
     }
@@ -146,6 +150,7 @@ class HomeController extends Controller
         $data['email'] = $this->infoRepository->getValue(['email']);
         $data['phone'] = $this->infoRepository->getValue(['phone']);
         $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
 
         return view('website.site.login',compact('data'));
     }
@@ -183,6 +188,7 @@ class HomeController extends Controller
         $data['email'] = $this->infoRepository->getValue(['email']);
         $data['phone'] = $this->infoRepository->getValue(['phone']);
         $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
 
         return view('website.site.program_details',compact('program','data'));
     }
@@ -196,6 +202,7 @@ class HomeController extends Controller
         $data['email'] = $this->infoRepository->getValue(['email']);
         $data['phone'] = $this->infoRepository->getValue(['phone']);
         $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
 
         return view('website.site.ads_details',compact('advertisement','data'));
     }
