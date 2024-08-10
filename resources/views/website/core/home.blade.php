@@ -125,7 +125,7 @@
             </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'register' ? 'active' : '' }}" href="{{ route('getregister') }}"> انشاء حساب</a>
+                    <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'register' ? 'active' : '' }}" href="{{ route('getregister') }}">التسجيل</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'login' ? 'active' : '' }}" href="{{ route('getlogin') }}"> تسجيل الدخول</a>
