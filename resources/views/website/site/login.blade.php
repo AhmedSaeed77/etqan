@@ -30,7 +30,7 @@
                 <br>
               </div>
               <button type="submit" class="btn main_btn">ارسال</button>
-            <p >انشاء حساب جديد  <a href="{{ route('getregister') }}"> انشاء حساب </a></p>
+            <p >التسجيل في الموقع  <a href="{{ route('getregister') }}"> التسجيل </a></p>
             </form>
           </div>
 
