@@ -1,6 +1,6 @@
 @extends('website/core/home')
 
-@section('title', 'تواصل معنا')
+@section('title', 'تسجيل الدخول')
  @section('content')
 
     <div class="container">
