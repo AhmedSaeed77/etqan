@@ -1,4 +1,4 @@
-@extends('Dashboard.core.app')
+@extends('dashboard.core.app')
 @section('title', __('titles.Messages'))
 @section('content')
     <!-- Content Header (Page header) -->
