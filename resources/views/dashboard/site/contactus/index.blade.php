@@ -121,7 +121,7 @@
                                         </td>
                                     </tr>
                                 @empty
-                                    @include('Dashboard.core.includes.no-entries', ['columns' => 6])
+                                    @include('dashboard.core.includes.no-entries', ['columns' => 6])
                                 @endforelse
                                 </tbody>
                             </table>
