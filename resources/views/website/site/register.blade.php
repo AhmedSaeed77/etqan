@@ -6,8 +6,8 @@
     <div class="container">
       <div class="contact_us gap-5 py-5 d-grid gap-5">
         <div >
-          <h2 class="page_title">  التسجيل</h2>
-          <p>التسجيل في الموقع لكى تستفيد بكل جديد</p>
+          <h2 class="page_title">  التسجيل فى البرنامج</h2>
+          <p>التسجيل في البرنامج لكى تستفيد بكل جديد</p>
         </div>
         <div class="d-grid d-md-flex justify-content-center gap-5 align-items-start ">
           <div class="contact_form  order-1 order-md-0 ">
