@@ -38,6 +38,26 @@
                     </a>
                 </li>
 
+                
+
+                <li class="nav-item  {{ in_array(request()->route()->getName(),['members.index', 'members.create', 'members.edit', 'members.show'])? 'menu-open': '' }}">
+                    <a href="{{ route('members.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            @lang('dashboard.members')
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item  {{ in_array(request()->route()->getName(),['graduates.index', 'graduates.create', 'graduates.edit', 'graduates.show'])? 'menu-open': '' }}">
+                    <a href="{{ route('graduates.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            @lang('dashboard.graduates')
+                        </p>
+                    </a>
+                </li>
+
                 <li class="nav-item  {{ in_array(request()->route()->getName(),['advertisements.index', 'advertisements.create', 'advertisements.edit', 'advertisements.show'])? 'menu-open': '' }}">
                     <a href="{{ route('advertisements.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-circle"></i>

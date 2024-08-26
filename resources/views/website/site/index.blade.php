@@ -9,30 +9,21 @@
 .div-up{
     display: flex;
     justify-content: center;
-
+}
+figure {
+    background: transparent; /* Ensure no background color */
+    border: none; /* Remove any borders */
+    outline: none; /* Remove any outlines */
 }
 
-
 </style>
-    <!-- start hero section -->
-    <div class="hero" style="background: url('{{ url($home['home_content']['image']) }}') no-repeat center center; background-size: cover; height: 100vh;">
-        <div class="container d-flex justify-content-center ">
-          <div class="hero_container d-flex align-items-center justify-content-center ">
-            <h1 class="hero_container_header my-0"> {{ $home['home_content']['title'] }}</h1>
-            <p class="hero_container_description my-0">{!! $home['home_content']['description'] !!}</p>
-            <a href="{{ route('contact') }}">
-              <button class="main_btn hero_container_button">اتصل بنا</button>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- end hero section -->
+
 
     <!-- start About section -->
     <section class="container py-5 ">
       <div class="row d-flex about align-items-center">
         <div class=" col-12 col-md-6 about_content order-2 order-md-1">
-          <sub>عن اتقان</sub>
+          <sub>عن إتقان</sub>
           <h2>{{ $home['about_content']['title'] }}</h2>
           <p class="mt-3 mt-md-4">
             {!! $home['about_content']['description'] !!}
@@ -83,7 +74,7 @@
       <div class="d-grid ">
         <div class="title  pt-5 d-flex align-items-center gap-3">
           <span class="title_border"></span>
-          <h2 class="text-primary fw-bold fs-1">الاطباء</h2>
+          <h2 class="text-primary fw-bold fs-1">المؤسسين</h2>
         </div>
         <div class="doctors d-flex flex-wrap gap-5 py-5 justify-content-center">
             @foreach ($doctors as $doctor)
@@ -126,5 +117,20 @@
       </div>
     </div>
     <!-- end programmes -->
+
+    <!-- start hero section -->
+    <div class="hero" style="background: url('{{ url($home['home_content']['image']) }}') no-repeat center center; background-size: cover; height: 100vh;">
+        <div class="container d-flex justify-content-center ">
+          <div class="hero_container d-flex align-items-center justify-content-center ">
+            <h1 class="hero_container_header my-0"> {{ $home['home_content']['title'] }}</h1>
+            <p class="hero_container_description my-0">{!! $home['home_content']['description'] !!}</p>
+            <a href="{{ route('contact') }}">
+              <button class="main_btn hero_container_button">اتصل بنا</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- end hero section -->
+
   </div>
   @endsection

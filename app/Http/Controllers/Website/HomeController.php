@@ -13,8 +13,10 @@ use App\Http\Services\Mutual\FileManagerService;
 use App\Models\Advertisements;
 use App\Models\Doctor;
 use App\Models\ContactUs;
+use App\Models\Graduate;
 use App\Models\Program;
 use App\Models\User;
+use App\Models\Member;
 use App\Repository\StructureRepositoryInterface;
 use App\Repository\InfoRepositoryInterface;
 use Illuminate\Support\Str;
@@ -70,6 +72,42 @@ class HomeController extends Controller
         $data['ads'] = $this->infoRepository->getValue(['ads']);
 
         return view('website.site.doctors',compact('home','doctors','data'));
+    }
+
+    public function members()
+    {
+        $local = 'ar';
+        $structures = $this->structureRepository->structure('home');
+        $data = json_decode($structures['content'], true);
+        $home = $data[$local];
+        $members = Member::get();
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
+
+        return view('website.site.members',compact('home','members','data'));
+    }
+
+    public function graduates()
+    {
+        $local = 'ar';
+        $structures = $this->structureRepository->structure('home');
+        $data = json_decode($structures['content'], true);
+        $home = $data[$local];
+        $graduates = Graduate::get();
+        $data['facebook'] = $this->infoRepository->getValue(['facebook']);
+        $data['linkedin'] = $this->infoRepository->getValue(['linkedin']);
+        $data['twitter'] = $this->infoRepository->getValue(['twitter']);
+        $data['email'] = $this->infoRepository->getValue(['email']);
+        $data['phone'] = $this->infoRepository->getValue(['phone']);
+        $data['location'] = $this->infoRepository->getValue(['location']);
+        $data['ads'] = $this->infoRepository->getValue(['ads']);
+
+        return view('website.site.graduates',compact('home','graduates','data'));
     }
 
     public function contact()

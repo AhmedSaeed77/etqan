@@ -11,6 +11,8 @@ use App\Http\Controllers\Dashboard\ContactUsController;
 use App\Http\Controllers\Dashboard\Info\InfoController;
 use App\Http\Controllers\Dashboard\Program\ProgramController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\Dashboard\MemberController;
+use App\Http\Controllers\Dashboard\GraduateController;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
@@ -42,6 +44,9 @@ Route::group([
         Route::resource('homedoctors', DoctorController::class);
         Route::resource('contactus', ContactUsController::class);
         Route::post('contactusreply/{id}', [ContactUsController::class,'reply'])->name('contactus.reply');
+
+        Route::resource('members', MemberController::class);
+        Route::resource('graduates', GraduateController::class);
 
     });
 });

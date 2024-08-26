@@ -23,6 +23,8 @@ Route::get('/', function () {
 
     Route::get('/home',[HomeController::class,'index'])->name('index');
     Route::get('/doctors',[HomeController::class,'doctors'])->name('doctors');
+    Route::get('/membershome',[HomeController::class,'members'])->name('membershome');
+    Route::get('/graduateshome',[HomeController::class,'graduates'])->name('graduateshome');
     Route::get('/contact',[HomeController::class,'contact'])->name('contact');
     Route::post('/contact',[HomeController::class,'storecontact'])->name('storecontact');
     Route::get('/ads-details/{id}',[HomeController::class,'ads_details'])->name('ads_details');

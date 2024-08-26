@@ -14,6 +14,8 @@ return [
     'Image' => 'الصورة',
     'url_video' => 'لينك الفديو',
     'structure' => 'الهيكل',
+    'members' => 'اعضاء مجلس الاداره',
+    'graduates' => 'الخريجين',
     'home_content' => 'محتوى الصفحه الرئيسيه',
     'contact' => 'محتوى تواصل معنا',
     'programs' => 'البرامج',

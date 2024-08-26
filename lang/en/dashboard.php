@@ -16,6 +16,8 @@ return [
     'Image' => 'Image',
     'somthing_wrong' => 'Somthing Wrong',
     'Name' => 'Name',
+    'members' => 'Members',
+    'graduates' => 'Graduates',
     'programs' => 'Programs',
     'Messages' => 'Messages',
     'date' => 'Date',

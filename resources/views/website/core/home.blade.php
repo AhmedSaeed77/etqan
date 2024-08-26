@@ -100,8 +100,12 @@
               <a class="nav-link  text_gray fs_18 {{ Route::currentRouteName() == 'index' ? 'active' : '' }}" aria-current="page" href="{{ route('index') }}">الرئيسية</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'doctors' ? 'active' : '' }}" href="{{ route('doctors') }}">الاطباء</a>
+              <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'doctors' ? 'active' : '' }}" href="{{ route('doctors') }}">المؤسسين</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'membershome' ? 'active' : '' }}" href="{{ route('membershome') }}">أعضاء مجلس الأدارة</a>
+              </li>
 
             <li class="nav-item">
               <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'contact' ? 'active' : '' }}" href="{{ route('contact') }}">اتصل بنا</a>
@@ -131,6 +135,11 @@
                     <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'login' ? 'active' : '' }}" href="{{ route('getlogin') }}"> تسجيل الدخول</a>
                 </li>
             @endif
+
+            <li class="nav-item">
+                <a class="nav-link text_gray fs_18 {{ Route::currentRouteName() == 'graduateshome' ? 'active' : '' }}" href="{{ route('graduateshome') }}"> الخريجين</a>
+              </li>
+
           </ul>
 
         </div>
@@ -147,7 +156,7 @@
             <ul class=" px-0 d-flex gap-3 footer_list mb-0">
                 <li>
                     <a target="_blank" href="{{ $data['facebook'] }}">
-                        <i class="facebook fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </li>
                 <li>
