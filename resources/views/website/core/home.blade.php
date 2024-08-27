@@ -165,7 +165,7 @@
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="{{ $data['email'] }}">
+                    <a target="_blank" href="mailto:{{ $data['email'] }}">
                         <i class="google far fa-envelope"></i>
                     </a>
                 </li>
