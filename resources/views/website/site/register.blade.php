@@ -30,8 +30,8 @@
                     @error('phone')
                         <div class="alert alert-danger text-danger">{{ $message }}</div>
                     @enderror
-                    <label for="exampleInputName1"> وثيقة التخرج</label>
-                    <input  type="file" name="graduation_document" placeholder="وثيقة التخرج">
+                    <label for="exampleInputName1">السيرة الذاتية</label>
+                    <input  type="file" name="graduation_document" placeholder="السيرة الذاتية">
                     @error('graduation_document')
                         <div class="alert alert-danger text-danger">{{ $message }}</div>
                     @enderror
