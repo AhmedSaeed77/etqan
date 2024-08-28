@@ -126,7 +126,8 @@
                             </table>
                         </div>
                         <!-- /.card-body -->
-                        <div class="card-footer">
+                         <div class="card-footer">
+                            {!! $users->links() !!}
                         </div>
                     </div>
                     <!-- /.card -->
